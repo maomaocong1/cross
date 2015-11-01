@@ -1,0 +1,104 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/*需 要支持ie6要把position=fixed改为absolute*/
+#waper {
+    width: 400px;
+    height: 400px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -200px;
+    margin-top: -200px;
+    -webkit-animation: rot linear 4s infinite;
+    -moz-animation: rot linear 4s infinite;
+    -o-animation: rot linear 4s infinite;
+    animation: rot linear 4s infinite;
+}
+
+/*以middle为容器将所有div重合，然后再调其它DIV的位置。*/
+.middle {
+    margin-left: 50%;
+    margin-top: 50%;
+    top: -50px;
+    left: -50px;
+    float: left;
+    background-image: url("../img/resizeApi.png");
+}
+
+.left {
+    left: -100px;
+    border-radius: 50%;
+    background-image: url("../img/dog.png");
+}
+
+.right {
+    left: 100px;
+    border-radius: 50%;
+    background-image: url("../img/pig.png");
+}
+
+.top {
+    top: -100px;
+    border-radius: 50%;
+    background-image: url("../img/tiger.png");
+}
+
+.bottom {
+    top: 100px;
+    border-radius: 50%;
+    background-image: url("../img/rabit.png");
+}
+
+.bl {
+    /*<!~--给所有DIV加内部阴影。-->*/
+    -webkit-box-shadow: 0 0 5px 3px rgba(255, 0, 0, .6) inset, 0 0 5px 6px rgba(0, 182, 0, .6) inset, 0 0 5px 10px rgba(255, 255, 0, .6) inset;
+    box-shadow: 0 0 5px 3px rgba(255, 0, 0, .6) inset, 0 0 5px 6px rgba(0, 182, 0, .6) inset, 0 0 5px 10px rgba(255, 255, 0, .6) inset;
+    /*定义组成十字架div的共有属性*/
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.9; /*原始透明度0.9*/
+    filter: alpha(opacity=90);
+}
+
+/*为添加动画*/
+@-webkit-keyframes rot {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes rot {
+    0% {
+        -moz-transform: rotate(0deg);
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@keyframes rot {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
